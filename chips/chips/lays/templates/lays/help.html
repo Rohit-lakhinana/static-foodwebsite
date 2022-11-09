@@ -1,0 +1,89 @@
+{% load static %}
+{% load social_share %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+kbd {
+  border-radius: 2px;
+  padding: 2px;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">State</label>
+    <select id="country" name="country">
+      <option value="australia">Banglore</option>
+      <option value="canada">Vizag</option>
+      <option value="usa">Chennai</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <a href="{% url 'suc' %}"><input type="submit" value="Submit"></a>
+  </form>
+</div>
+
+<center><h1>Contact us on : ############<h/></center>
+  
+    <br>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"/>
+ <center>
+ <b><kbd>SOCIAL SHARE</kbd></b>
+ <br>
+ <br>
+
+<b><i class="fab fa-twitter"></i>{% post_to_twitter object_or_url "Post to Twitter" %}</b>
+<b><i class="fab fa-whatsapp"></i>{% post_to_whatsapp object_or_url "Post to Whatsapp" %}</b>
+<b><i class="fab fa-facebook"></i>{% post_to_facebook object_or_url "Post to Facebook" %}</b></center>
+
+</body>
+</html>
